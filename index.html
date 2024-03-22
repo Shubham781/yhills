@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <h1>Task Manager</h1>
+        </div>
+        <div class="main">
+            <div class="addtasks">
+                <h2>Add Task</h2>
+                <hr>
+            </div>
+            <input type="text" id="tasktext" name="tasktext" placeholder="E.g: Conquer bugs like a boss">
+            <div id="createtask">
+                + Create Task
+            </div>
+            <div class="addedtasks">
+                <h2 style="color: #141416;">Current Tasks</h2>
+                <hr>
+                <ul id="taskincomplete">
+                    <li><input type="checkbox"><label>Take mum shopping</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+                </ul>
+            </div>
+            <div class="completedtasks">
+                <h2 style="color: #141416;" >Completed Tasks</h2>
+                <hr>
+                <ul id="taskcomplete">
+                    <li><input type="checkbox" checked><label>See the Doctor</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Add your JavaScript file here -->
+    <script src="./index.js"></script>
+</body>
+</html>
