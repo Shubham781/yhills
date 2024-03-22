@@ -1,4 +1,3 @@
-// Find elements and give them a variable
 var taskInput = document.getElementById("tasktext");
 var addButton = document.getElementById("createtask");
 var incompletedTaskHolder = document.getElementById("taskincomplete");
@@ -11,8 +10,6 @@ var createNewTaskElement = function(taskString) {
     var editInput = document.createElement("input");
     var editButton = document.createElement("button");
     var deleteButton = document.createElement("button");
-
-    // Each element needs modifying
 
     checkBox.type = "checkbox";
     editInput.type = "text";
@@ -38,7 +35,7 @@ var addTask = function() {
     var listItem = createNewTaskElement(taskInput.value);
     incompletedTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted);
-    taskInput.value = ''; // Clear the input field after adding task
+    taskInput.value = ''; 
 }
 
 var editTask = function() {
@@ -48,21 +45,15 @@ var editTask = function() {
     var editInput = listItem.querySelector('input[type=text]');
     var editButton = listItem.querySelector('button.edit');
     var containsClass = listItem.classList.contains('editMode');
-
-    // If the class of the parent is .editmode
+    
     if (containsClass) {
-        // Switch from .editmode
-        // Label text become the input's value
         label.innerText = editInput.value;
         editButton.innerText = 'Edit';
     } else {
-        // Switch to .editmode
-        // input value becomes the label's text
         editInput.value = label.innerText;
         editButton.innerText = 'Save';
     }
 
-    // Toggle .editmode on the parent
     listItem.classList.toggle('editMode');
 }
 
@@ -70,7 +61,6 @@ var deleteTask = function() {
     console.log("delete Task");
     var listItem = this.parentNode;
     var ul = listItem.parentNode;
-    // Remove the parent list item from the ul
     ul.removeChild(listItem);
 }
 
@@ -102,11 +92,9 @@ var ajaxRequest = function() {
     console.log("AJAX request");
 }
 
-// Set the click handler to the addTask function
 addButton.addEventListener("click", addTask);
 addButton.addEventListener("click", ajaxRequest);
 
-// Loop through each task holder and bind task events
 for (var i = 0; i < incompletedTaskHolder.children.length; i++) {
     bindTaskEvents(incompletedTaskHolder.children[i], taskCompleted);
 }
